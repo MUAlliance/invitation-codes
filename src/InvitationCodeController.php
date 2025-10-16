@@ -50,6 +50,7 @@ class InvitationCodeController extends Controller
         DB::table('invitation_codes')->insert([
                     'code' => md5(Str::random()),
                     'generated_at' => Carbon::now(),
+                    'used_by' => 0,
           			'description' => $description
         ]);
 
